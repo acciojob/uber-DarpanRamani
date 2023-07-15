@@ -15,12 +15,15 @@ public class Driver{
 
     @OneToOne
     @JoinColumn
-    Cab cab;
+   private Cab cab;
 
     @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
     List<TripBooking> tripBookingList = new ArrayList<>();
 
 
+    public Driver() {
+
+    }
 
     public Driver(String mobile, String password) {
 

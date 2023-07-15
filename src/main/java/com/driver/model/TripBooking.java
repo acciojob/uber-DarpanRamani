@@ -18,11 +18,11 @@ public class TripBooking {
 
     @ManyToOne
     @JoinColumn
-    Customer customer;
+   private Customer customer;
 
     @ManyToOne
     @JoinColumn
-    Driver driver;
+   private Driver driver;
 
     public TripBooking() {
 
