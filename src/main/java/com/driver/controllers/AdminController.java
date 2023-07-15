@@ -44,7 +44,6 @@ public class AdminController {
 	@GetMapping("/listOfDrivers")
 	public List<Driver> listOfDrivers() {
 
-		List<Driver> listOfDrivers = adminService.getListOfDrivers();
-		return listOfDrivers;
+		return adminService.getListOfDrivers();
 	}
 }
