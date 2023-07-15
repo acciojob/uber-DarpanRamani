@@ -13,15 +13,16 @@ public class Cab{
     private int perKmRate;
     private boolean available;
 
-    @OneToOne(mappedBy = "cab",cascade = CascadeType.ALL)
+    @OneToOne
+    @JoinColumn
    private Driver driver;
 
     public Cab(int perKmRate) {
 
     }
 
-    public Cab(int cabId, int perKmRate, boolean available) {
-        this.cabId = cabId;
+    public Cab(int perKmRate, boolean available) {
+
         this.perKmRate = perKmRate;
         this.available = available;
     }

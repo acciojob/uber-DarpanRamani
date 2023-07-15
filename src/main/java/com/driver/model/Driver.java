@@ -13,27 +13,21 @@ public class Driver{
     private String mobile;
     private String password;
 
-    @OneToOne
-    @JoinColumn
+    @OneToOne(mappedBy = "driver",cascade = CascadeType.ALL)
    private Cab cab;
 
     @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
-    List<TripBooking> tripBookingList = new ArrayList<>();
+   private List<TripBooking> tripBookingList = new ArrayList<>();
 
 
     public Driver() {
 
     }
 
+
     public Driver(String mobile, String password) {
-
-    }
-
-    public Driver(int driverId, String mobile, String password, Cab cab) {
-        this.driverId = driverId;
         this.mobile = mobile;
         this.password = password;
-        this.cab = cab;
     }
 
     public String getMobile() {
