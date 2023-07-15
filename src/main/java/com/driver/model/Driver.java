@@ -17,7 +17,7 @@ public class Driver{
     @JoinColumn
     Cab cab;
 
-    @OneToMany(mappedBy = "Driver",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "driver",cascade = CascadeType.ALL)
     List<TripBooking> tripBookingList = new ArrayList<>();
 
 
