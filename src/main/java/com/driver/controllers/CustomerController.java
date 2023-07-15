@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class CustomerController {
 	@Autowired
 	CustomerService customerService;
+
 	@PostMapping("/register")
 	public ResponseEntity<Void> registerCustomer(@RequestBody Customer customer){
 		customerService.register(customer);
@@ -37,6 +38,6 @@ public class CustomerController {
 
 	@DeleteMapping("/cancelTrip")
 	public void cancelTrip(@RequestParam Integer tripId){
-		customerService.cancelTrip(tripId);
+		customerService.completeTrip(tripId);
 	}
 }

@@ -4,27 +4,25 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Entity
-public class Customer{
+@Table(name ="customer")
+public class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int customerId;
-    private String mobile;
-   private String password;
 
-    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
-    List<TripBooking> tripBookingList = new ArrayList<>();
+    private String mobile;
+
+    private String password;
 
     public Customer() {
-
     }
 
-    public Customer(int customerId, String mobile, String password, List<TripBooking> tripBookingList) {
-        this.customerId = customerId;
+    public Customer(String mobile, String password) {
         this.mobile = mobile;
         this.password = password;
-        this.tripBookingList = tripBookingList;
     }
 
     public int getCustomerId() {
@@ -50,6 +48,8 @@ public class Customer{
     public void setPassword(String password) {
         this.password = password;
     }
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
+    private List<TripBooking> tripBookingList = new ArrayList<>();
 
     public List<TripBooking> getTripBookingList() {
         return tripBookingList;
@@ -58,6 +58,4 @@ public class Customer{
     public void setTripBookingList(List<TripBooking> tripBookingList) {
         this.tripBookingList = tripBookingList;
     }
-
-
 }
