@@ -13,7 +13,7 @@ public class Customer{
     String mobile;
     String password;
 
-    @OneToMany(mappedBy = "Customer",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     List<TripBooking> tripBookingList = new ArrayList<>();
 
     public Customer() {
