@@ -7,7 +7,7 @@ import java.sql.Driver;
 public class Cab{
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int cabId;
 
     private int perKmRate;
@@ -16,7 +16,7 @@ public class Cab{
     @OneToOne(mappedBy = "cab",cascade = CascadeType.ALL)
     Driver driver;
 
-    public Cab(int i) {
+    public Cab(int perKmRate) {
 
     }
 
@@ -50,11 +50,11 @@ public class Cab{
         this.availableCab = availableCab;
     }
 
-    public Driver getDriver() {
-        return driver;
-    }
-
-    public void setDriver(Driver driver) {
-        this.driver = driver;
-    }
+//    public Driver getDriver() {
+//        return driver;
+//    }
+//
+//    public void setDriver(Driver driver) {
+//        this.driver = driver;
+//    }
 }
