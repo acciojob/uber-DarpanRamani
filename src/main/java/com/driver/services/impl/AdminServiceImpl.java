@@ -52,7 +52,7 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<java.sql.Driver> getListOfDrivers() {
+	public List<Driver> getListOfDrivers() {
 		//Find the list of all drivers
 		List<Driver> drivers = driverRepository1.findAll();
 		return drivers;
